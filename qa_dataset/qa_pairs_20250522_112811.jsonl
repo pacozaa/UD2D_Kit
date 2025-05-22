@@ -1,0 +1,20 @@
+{"question": "What is the purpose of the sample markdown file?", "answer": "To test the Q&A generator.", "source": "sample.md"}
+{"question": "What are the key features listed in the document?", "answer": "- Easy to use\n- Creates high-quality Q&A pairs\n- Configurable output", "source": "sample.md"}
+{"question": "Why should you use this tool according to the document?", "answer": "Using this tool can help you create better training data for your AI models.", "source": "sample.md"}
+{"question": "How do you use the tool according to the example provided?", "answer": "You use the tool by running `python generate_qa.py`.", "source": "sample.md"}
+{"question": "What conclusion does the document make about the tool?", "answer": "The document concludes that the tool is a great way to generate Q&A pairs from markdown documentation.", "source": "sample.md"}
+{"question": "What types of output does the tool provide based on its features?", "answer": "The tool provides configurable output.", "source": "sample.md"}
+{"question": "In what context is this tool useful?", "answer": "The tool is useful for creating better training data for AI models.", "source": "sample.md"}
+{"question": "Is there a specific script mentioned for generating Q&A pairs?", "answer": "Yes, the script `generate_qa.py` is mentioned.", "source": "sample.md"}
+{"question": "What programming language is used in the example code snippet?", "answer": "Python.", "source": "sample.md"}
+{"question": "What feature of the tool might make it user-friendly?", "answer": "The tool is described as 'easy to use'.", "source": "sample.md"}
+{"question": "What is the expected quality of the Q&A pairs created by the tool?", "answer": "The Q&A pairs are expected to be high-quality.", "source": "sample.md"}
+{"question": "Does the document provide any benefit of using the tool for AI models?", "answer": "Yes, it mentions that the tool can help create better training data for AI models.", "source": "sample.md"}
+{"question": "What script command is shown as an example?", "answer": "The command `python generate_qa.py` is shown.", "source": "sample.md"}
+{"question": "How does the document describe the tool overall?", "answer": "As a great way to generate Q&A pairs from markdown documentation.", "source": "sample.md"}
+{"question": "According to the features, can the output of this tool be adjusted?", "answer": "Yes, the tool has a configurable output feature.", "source": "sample.md"}
+{"question": "What is one potential use of this tool in the field of AI?", "answer": "To help create better training data for AI models.", "source": "sample.md"}
+{"question": "What type of documentation is the tool intended to work with?", "answer": "Markdown documentation.", "source": "sample.md"}
+{"question": "Which feature might assist users in customizing their results?", "answer": "Configurable output.", "source": "sample.md"}
+{"question": "What is one key benefit of using this tool as per the document?", "answer": "It helps in creating better training data for AI models.", "source": "sample.md"}
+{"question": "What logical assumption can we make about the tool based on its key features?", "answer": "That it is user-friendly, produces high-quality output, and allows customization.", "source": "sample.md"}

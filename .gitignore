@@ -1,0 +1,82 @@
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Distribution / packaging
+wheels/
+*.egg-info/
+.installed.cfg
+
+# Virtual environments
+venv/
+ENV/
+.env
+.venv
+env/
+env.bak/
+venv.bak/
+pythonenv*
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE related
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings
+
+# OS specific
+.DS_Store
+.DS_store
+Thumbs.db
+
+# Project specific
+*.log
+*.sqlite3
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Data files
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.zip
+!palo-web-md.zip

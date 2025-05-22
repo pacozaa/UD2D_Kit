@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web_to_dataset"
+version = "0.1.0"
+description = "A Python project that analyzes GitHub Copilot data, including modules for analyzing usage data, generating reports, and visualizing results"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sarin Suriyakoon", email = "example@example.com" }]
+
+# Define all dependencies
+dependencies = [
+    # Core dependencies
+    "pydantic==2.11.4",
+    "pydantic_core==2.33.2",
+    "pandas==2.2.3",
+    "matplotlib==3.10.3",
+
+    # For HTTP requests and web scraping
+    "requests==2.32.3",
+    "beautifulsoup4==4.13.4",
+
+    # For OpenAI API integration
+    "openai==1.79.0",
+    "python-dotenv==1.1.0",
+
+    # For command line interfaces and progress tracking
+    "tqdm==4.67.1",
+
+    # For HTML to Markdown conversion
+    "markitdown==0.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "black>=23.0.0", "isort>=5.12.0", "mypy>=1.0.0"]
+
+[tool.setuptools]
+packages = ["generate_qa", "download_and_convert"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[project.scripts]
+download_and_convert = "download_and_convert.main:main"
+generate_qa = "generate_qa.main:main"

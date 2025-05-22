@@ -1,0 +1,1933 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>GitHub Copilot Implementation &amp; Adoption | PALO IT Services</title>
+    <link rel="shortcut icon" href="https://www.palo-it.com/hubfs/Colour%20Favicon_S-1.png">
+    <meta name="description" content="Maximize GitHub Copilot with PALO IT's training sessions. Overcome adoption challenges and empower teams in AI-driven SLDC for seamless transformation.">
+    
+    
+    
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="Maximize GitHub Copilot with PALO IT's training sessions. Overcome adoption challenges and empower teams in AI-driven SLDC for seamless transformation.">
+    <meta property="og:title" content="GitHub Copilot Implementation &amp; Adoption | PALO IT Services">
+    <meta name="twitter:description" content="Maximize GitHub Copilot with PALO IT's training sessions. Overcome adoption challenges and empower teams in AI-driven SLDC for seamless transformation.">
+    <meta name="twitter:title" content="GitHub Copilot Implementation &amp; Adoption | PALO IT Services">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/182598709773/1742391896456/template_main.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/182598709782/1744371161014/template_theme-overrides.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/182754985648/1744371163111/template_slick.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/183261878894/1744371164266/template_slick-theme.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/182600187530/1744447064578/module_header.min.css">
+<link rel="stylesheet" href="/hs/hsstatic/cos-LanguageSwitcher/static-1.336/sass/LanguageSwitcher.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/183841127525/1744447104858/module_Banner_-_Blog_Report_Pages.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/183842198455/1744447105916/module_Content_with_Image.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/183172226608/1744447084531/module_Logos_Section.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/186383292314/1740943583958/module_Advanced_Rich_Text.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/183175572380/1744447085426/module_Equal_Column_Card.min.css">
+<link rel="stylesheet" href="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/182613678954/1740943567548/module_footer.min.css">
+<style>
+  @font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Montserrat/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Montserrat/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Montserrat/700.woff2") format("woff2"), url("/_hcms/googlefonts/Montserrat/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Source_Sans_Pro/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Source_Sans_Pro/regular.woff") format("woff");
+  }
+</style>
+
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css">
+.dnd_area-row-0-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.dnd_area-row-1-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.dnd_area-row-4-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.dnd_area-row-5-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+/* HubSpot Styles (default) */
+.dnd_area-row-0-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-row-1-margin {
+  margin-top: 24px !important;
+}
+.dnd_area-row-1-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-row-2-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.dnd_area-row-3-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.dnd_area-row-3-background-layers {
+  background-image: linear-gradient(rgba(246, 246, 245, 1), rgba(246, 246, 245, 1)) !important;
+  background-position: left top !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+}
+.dnd_area-row-4-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-row-5-margin {
+  margin-top: 24px !important;
+}
+.dnd_area-row-5-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-column-1-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-column-3-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-column-7-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-column-9-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+</style>
+    
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+<script>
+var _hsp = window._hsp = window._hsp || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+var useGoogleConsentModeV2 = true;
+var waitForUpdateMillis = 1000;
+
+
+if (!window._hsGoogleConsentRunOnce) {
+  window._hsGoogleConsentRunOnce = true;
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': waitForUpdateMillis
+  });
+
+  if (useGoogleConsentModeV2) {
+    _hsp.push(['useGoogleConsentModeV2'])
+  } else {
+    _hsp.push(['addPrivacyConsentListener', function(consent){
+      var hasAnalyticsConsent = consent && (consent.allowed || (consent.categories && consent.categories.analytics));
+      var hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement));
+
+      gtag('consent', 'update', {
+        'ad_storage': hasAdsConsent ? 'granted' : 'denied',
+        'analytics_storage': hasAnalyticsConsent ? 'granted' : 'denied',
+        'ad_user_data': hasAdsConsent ? 'granted' : 'denied',
+        'ad_personalization': hasAdsConsent ? 'granted' : 'denied'
+      });
+    }]);
+  }
+}
+
+gtag('js', new Date());
+gtag('set', 'developer_id.dZTQ1Zm', true);
+gtag('config', 'G-R6N8J06VLF');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6N8J06VLF"></script>
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+    <link rel="canonical" href="https://www.palo-it.com/en/services/digital-transformation/github-copilot-adoption">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5FKLBSP');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Hotjar Tracking Code for Site 4958769 (name missing) -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:4958769,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- End Hotjar -->
+<meta property="og:image" content="https://www.palo-it.com/hubfs/chub_backup/palo_it_featured_image-1.png">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="566">
+<meta property="og:image:alt" content="palo it, github adoption, github ingration, AI consultancy, IT consultancy">
+<meta name="twitter:image" content="https://www.palo-it.com/hubfs/chub_backup/palo_it_featured_image-1.png">
+<meta name="twitter:image:alt" content="palo it, github adoption, github ingration, AI consultancy, IT consultancy">
+
+<meta property="og:url" content="https://www.palo-it.com/en/services/digital-transformation/github-copilot-adoption">
+<meta name="twitter:card" content="summary_large_image">
+<meta http-equiv="content-language" content="en">
+<link rel="alternate" hreflang="en" href="https://www.palo-it.com/en/services/digital-transformation/github-copilot-adoption">
+<link rel="alternate" hreflang="es" href="https://www.palo-it.com/es/servicios/transformación-digital/adopción-github-copilot">
+<link rel="alternate" hreflang="fr" href="https://www.palo-it.com/fr/services/transformation-digitale/adoption-github-copilot">
+<link rel="alternate" hreflang="th" href="https://www.palo-it.com/th/services/digital-transformation/github-copilot-adoption">
+<link rel="alternate" hreflang="zh-cn" href="https://www.palo-it.com/zh-cn/services/digital-transformation/github-copilot-adoption">
+<link rel="alternate" hreflang="zh-hk" href="https://www.palo-it.com/zh-hk/services/digital-transformation/github-copilot-adoption">
+
+
+
+
+
+
+  <meta name="generator" content="HubSpot"></head>
+  <body>
+    <div class="body-wrapper   hs-content-id-188188463913 hs-landing-page hs-page ">
+      
+        <div data-global-resource-path="PaloIt-2024Theme-CTA9/templates/partials/header.html"><div id="hs_cos_wrapper_module_header" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="custom-header">
+  <a href="#main-content" class="header__skip">Skip to content</a>
+  <header>
+    <div class="content-wrapper">
+      <div class="inner-wrapper">
+        <div class="logo">
+          
+          
+          <a href="https://www.palo-it.com/en/">
+            
+            
+            
+            
+            
+            
+            <img class="white-logo" src="https://www.palo-it.com/hubfs/PaloIT-Assets/images/PALOLogo.svg" alt="PALOLogo" loading="lazy" width="137" height="32" style="max-width: 100%; height: auto;">
+            
+
+            
+            
+            
+            
+            
+            
+            <img class="green-logo" src="https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=137&amp;height=32&amp;name=PALOLogo_color.png" alt="PALOLogo_color" loading="lazy" width="137" height="32" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=69&amp;height=16&amp;name=PALOLogo_color.png 69w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=137&amp;height=32&amp;name=PALOLogo_color.png 137w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=206&amp;height=48&amp;name=PALOLogo_color.png 206w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=274&amp;height=64&amp;name=PALOLogo_color.png 274w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=343&amp;height=80&amp;name=PALOLogo_color.png 343w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/PALOLogo_color.png?width=411&amp;height=96&amp;name=PALOLogo_color.png 411w" sizes="(max-width: 137px) 100vw, 137px">
+            
+
+          </a>
+        </div>
+        <div class="mobile-trigger">
+          <svg class="open" width="17" height="15" viewbox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0.9375C0 0.429688 0.390625 0 0.9375 0H8.0625C8.57031 0 9 0.429688 9 0.9375C9 1.48438 8.57031 1.875 8.0625 1.875H0.9375C0.390625 1.875 0 1.48438 0 0.9375ZM0 7.1875C0 6.67969 0.390625 6.25 0.9375 6.25H16.0625C16.5703 6.25 17 6.67969 17 7.1875C17 7.73438 16.5703 8.125 16.0625 8.125H0.9375C0.390625 8.125 0 7.73438 0 7.1875ZM17 13.4375C17 13.9844 16.5703 14.375 16.0625 14.375H9.9375C9.39062 14.375 9 13.9844 9 13.4375C9 12.9297 9.39062 12.5 9.9375 12.5H16.0625C16.5703 12.5 17 12.9297 17 13.4375Z" fill="white" />
+          </svg>
+          <svg class="close" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.9912 7.33691L13.3037 12.0244L17.9521 16.6729C18.3428 17.0244 18.3428 17.6104 17.9521 17.9619C17.6006 18.3525 17.0146 18.3525 16.6631 17.9619L11.9756 13.3135L7.32715 17.9619C6.97559 18.3525 6.38965 18.3525 6.03809 17.9619C5.64746 17.6104 5.64746 17.0244 6.03809 16.6338L10.6865 11.9854L6.03809 7.33691C5.64746 6.98535 5.64746 6.39941 6.03809 6.00879C6.38965 5.65723 6.97559 5.65723 7.36621 6.00879L12.0146 10.6963L16.6631 6.04785C17.0146 5.65723 17.6006 5.65723 17.9912 6.04785C18.3428 6.39941 18.3428 6.98535 17.9912 7.33691Z" fill="#464644" />
+          </svg>
+
+        </div>
+        <div class="menu-button-group">
+          <div class="custom-menu-primary">
+            <div class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal">
+              <ul role="menu">
+                
+                <li class="hs-menu-item hs-menu-depth-1 " role="none">
+                  
+                  
+                  <a role="menuitem" href="https://www.palo-it.com/en/about-us">
+                    Who we are
+
+                  </a>
+                  
+                  
+
+                </li>
+                
+                <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none">
+                  
+                  
+                  <a role="menuitem" href="https://www.palo-it.com/en/services">
+                    What we do
+
+                  </a>
+                  
+                  <span class="child-trigger">
+                    <svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.26028 12.137L3.19778 7.07446C2.93411 6.83716 2.93411 6.44165 3.19778 6.17798C3.43509 5.94067 3.8306 5.94067 4.09427 6.17798L8.70853 10.8186L13.3228 6.20435C13.5601 5.94067 13.9556 5.94067 14.2193 6.20435C14.4566 6.44165 14.4566 6.83716 14.2193 7.07446L9.1304 12.137C8.8931 12.4006 8.49759 12.4006 8.26028 12.137Z" fill="#fff" />
+                    </svg>
+                  </span>
+                  
+                  
+                  <div class="sub-menu-wrapper">
+                    <div class="back-nav">
+                      <div class="backbtn">
+                        <a href="javascript:void(0)">
+                          <svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.729 8.729L10.7915 3.6665C11.0288 3.40283 11.4243 3.40283 11.688 3.6665C11.9253 3.90381 11.9253 4.29932 11.688 4.56299L7.04736 9.17725L11.6616 13.7915C11.9253 14.0288 11.9253 14.4243 11.6616 14.688C11.4243 14.9253 11.0288 14.9253 10.7915 14.688L5.729 9.59912C5.46533 9.36182 5.46533 8.96631 5.729 8.729Z" fill="#008F68" />
+                          </svg>
+                          Back</a>
+                      </div>
+                      <div class="cross">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.9912 7.33691L13.3037 12.0244L17.9521 16.6729C18.3428 17.0244 18.3428 17.6104 17.9521 17.9619C17.6006 18.3525 17.0146 18.3525 16.6631 17.9619L11.9756 13.3135L7.32715 17.9619C6.97559 18.3525 6.38965 18.3525 6.03809 17.9619C5.64746 17.6104 5.64746 17.0244 6.03809 16.6338L10.6865 11.9854L6.03809 7.33691C5.64746 6.98535 5.64746 6.39941 6.03809 6.00879C6.38965 5.65723 6.97559 5.65723 7.36621 6.00879L12.0146 10.6963L16.6631 6.04785C17.0146 5.65723 17.6006 5.65723 17.9912 6.04785C18.3428 6.39941 18.3428 6.98535 17.9912 7.33691Z" fill="#464644" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-wrapper">
+
+                      <div class="submenu-inner">
+                        <div class="image-column">
+                          
+                          
+                          
+                          
+                          
+                          
+                          <img src="https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=249&amp;height=308&amp;name=menu-image.png" alt="menu-image" loading="lazy" width="249" height="308" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=125&amp;height=154&amp;name=menu-image.png 125w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=249&amp;height=308&amp;name=menu-image.png 249w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=374&amp;height=462&amp;name=menu-image.png 374w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=498&amp;height=616&amp;name=menu-image.png 498w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=623&amp;height=770&amp;name=menu-image.png 623w, https://www.palo-it.com/hs-fs/hubfs/PaloIT-Assets/images/menu-image.png?width=747&amp;height=924&amp;name=menu-image.png 747w" sizes="(max-width: 249px) 100vw, 249px">
+                          
+                        </div>
+                        <div class="menu-item-column">
+                          <div class="title">
+                            What we do
+                            <span class="arrow"><svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15.1406 9.1415L9.98438 14.0634C9.69141 14.327 9.25195 14.327 8.98828 14.0341C8.72461 13.7411 8.72461 13.3017 9.01758 13.038L12.9141 9.31728H2.95312C2.54297 9.31728 2.25 9.02431 2.25 8.61416C2.25 8.2333 2.54297 7.91103 2.95312 7.91103H12.9141L9.01758 4.21963C8.72461 3.95596 8.72461 3.48721 8.98828 3.22353C9.25195 2.93056 9.7207 2.93056 9.98438 3.19424L15.1406 8.11611C15.2871 8.2626 15.375 8.43838 15.375 8.61416C15.375 8.81924 15.2871 8.99502 15.1406 9.1415Z" fill="#008F68" />
+                              </svg>
+                            </span>
+                          </div>
+                          <div class="child-menu-group">
+                            <div id="hs_menu_wrapper_module_header_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" role="menuitem" target="_self">Consulting services</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/esg-strategy" role="menuitem" target="_self">Corporate sustainability strategy</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/ux-ui-design" role="menuitem" target="_self">Human-centered design</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/digital-transformation" role="menuitem" target="_self">ROI &amp; value discovery workshops</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/data-management" role="menuitem" target="_self">Data strategy</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/artificial-intelligence" role="menuitem" target="_self">AI &amp; Gen AI strategy</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/tech-due-diligence" role="menuitem" target="_self">Technical due diligence</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" role="menuitem" target="_self">Development services</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/web-app-dev" role="menuitem" target="_self">AI-powered digital products</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/software-architecture" role="menuitem" target="_self">AI in software engineering</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/api-services" role="menuitem" target="_self">AI-driven API factory</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/mlops-llmops" role="menuitem" target="_self">MLOps &amp; LLMOps</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/esg-data-management-reporting" role="menuitem" target="_self">ESG data management &amp; reporting</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" role="menuitem" target="_self">Change Management</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/cloud-data-migration" role="menuitem" target="_self">Cloud data migration</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/data-governance" role="menuitem" target="_self">AI &amp; data governance</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/cybersecurity" role="menuitem" target="_self">Cybersecurity services</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/agile" role="menuitem" target="_self">Business &amp; people transformation</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.palo-it.com/en/services/academy-trainings" role="menuitem" target="_self">PALO IT Academy &amp; training</a></li>
+   </ul></li>
+ </ul>
+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header_menu_overlay"></div>
+                  </div>
+                  
+
+                </li>
+                
+                <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none">
+                  
+                  
+                  <a role="menuitem" href="https://www.palo-it.com/en/work">
+                    Who we work with
+
+                  </a>
+                  
+                  <span class="child-trigger">
+                    <svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.26028 12.137L3.19778 7.07446C2.93411 6.83716 2.93411 6.44165 3.19778 6.17798C3.43509 5.94067 3.8306 5.94067 4.09427 6.17798L8.70853 10.8186L13.3228 6.20435C13.5601 5.94067 13.9556 5.94067 14.2193 6.20435C14.4566 6.44165 14.4566 6.83716 14.2193 7.07446L9.1304 12.137C8.8931 12.4006 8.49759 12.4006 8.26028 12.137Z" fill="#fff" />
+                    </svg>
+                  </span>
+                  
+                  
+                  <div class="sub-menu-wrapper">
+                    <div class="back-nav">
+                      <div class="backbtn">
+                        <a href="javascript:void(0)">
+                          <svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.729 8.729L10.7915 3.6665C11.0288 3.40283 11.4243 3.40283 11.688 3.6665C11.9253 3.90381 11.9253 4.29932 11.688 4.56299L7.04736 9.17725L11.6616 13.7915C11.9253 14.0288 11.9253 14.4243 11.6616 14.688C11.4243 14.9253 11.0288 14.9253 10.7915 14.688L5.729 9.59912C5.46533 9.36182 5.46533 8.96631 5.729 8.729Z" fill="#008F68" />
+                          </svg>
+                          Back</a>
+                      </div>
+                      <div class="cross">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.9912 7.33691L13.3037 12.0244L17.9521 16.6729C18.3428 17.0244 18.3428 17.6104 17.9521 17.9619C17.6006 18.3525 17.0146 18.3525 16.6631 17.9619L11.9756 13.3135L7.32715 17.9619C6.97559 18.3525 6.38965 18.3525 6.03809 17.9619C5.64746 17.6104 5.64746 17.0244 6.03809 16.6338L10.6865 11.9854L6.03809 7.33691C5.64746 6.98535 5.64746 6.39941 6.03809 6.00879C6.38965 5.65723 6.97559 5.65723 7.36621 6.00879L12.0146 10.6963L16.6631 6.04785C17.0146 5.65723 17.6006 5.65723 17.9912 6.04785C18.3428 6.39941 18.3428 6.98535 17.9912 7.33691Z" fill="#464644" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-wrapper">
+
+                      <div class="submenu-inner">
+                        <div class="image-column">
+                          
+                          
+                          
+                          
+                          
+                          
+                          <img src="https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=252&amp;height=311&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png" alt="PALO IT who we work with menu" loading="lazy" width="252" height="311" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=126&amp;height=156&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 126w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=252&amp;height=311&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 252w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=378&amp;height=467&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 378w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=504&amp;height=622&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 504w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=630&amp;height=778&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 630w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20who%20we%20work%20with%20menu.png?width=756&amp;height=933&amp;name=PALO%20IT%20who%20we%20work%20with%20menu.png 756w" sizes="(max-width: 252px) 100vw, 252px">
+                          
+                        </div>
+                        <div class="menu-item-column">
+                          <div class="title">
+                            Who we work with
+                            <span class="arrow"><svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15.1406 9.1415L9.98438 14.0634C9.69141 14.327 9.25195 14.327 8.98828 14.0341C8.72461 13.7411 8.72461 13.3017 9.01758 13.038L12.9141 9.31728H2.95312C2.54297 9.31728 2.25 9.02431 2.25 8.61416C2.25 8.2333 2.54297 7.91103 2.95312 7.91103H12.9141L9.01758 4.21963C8.72461 3.95596 8.72461 3.48721 8.98828 3.22353C9.25195 2.93056 9.7207 2.93056 9.98438 3.19424L15.1406 8.11611C15.2871 8.2626 15.375 8.43838 15.375 8.61416C15.375 8.81924 15.2871 8.99502 15.1406 9.1415Z" fill="#008F68" />
+                              </svg>
+                            </span>
+                          </div>
+                          <div class="child-menu-group">
+                            <div id="hs_menu_wrapper_module_header_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/automotive-transport" role="menuitem" target="_self">Automotive, aerospace &amp; manufacturing</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/banking-finance" role="menuitem" target="_self">Banking &amp; finance</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/energy-industrials-construction" role="menuitem" target="_self">Energy &amp; utilities</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/government-public-services" role="menuitem" target="_self">Government, public services &amp; NGOs</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/healthcare-pharmaceuticals" role="menuitem" target="_self">Healthcare &amp; pharmaceuticals</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/insurance" role="menuitem" target="_self">Insurance</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/retail-luxury-food-and-beverage" role="menuitem" target="_self">Retail, luxury &amp; consumer goods</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/services-tourism" role="menuitem" target="_self">Services &amp; tourism</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/telecoms-media" role="menuitem" target="_self">Telecoms &amp; media</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work/transport-logistics" role="menuitem" target="_self">Transport &amp; logistics</a></li>
+ </ul>
+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header_menu_overlay"></div>
+                  </div>
+                  
+
+                </li>
+                
+                <li class="hs-menu-item hs-menu-depth-1 " role="none">
+                  
+                  
+                  <a role="menuitem" href="https://www.palo-it.com/en/career">
+                    Join us
+
+                  </a>
+                  
+                  
+
+                </li>
+                
+                <li class="hs-menu-item hs-menu-depth-1 " role="none">
+                  
+                  
+                  <a role="menuitem" href="https://www.palo-it.com/en/events">
+                    Events &amp; news
+
+                  </a>
+                  
+                  
+
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            
+            
+            
+            <a class="primary" href="https://www.palo-it.com/en/blog">
+              Insights
+            </a>
+            
+            
+            
+            
+            <a class="secondary" href="https://www.palo-it.com/en/contact-us">
+              Contact Us
+            </a>
+            
+          </div>
+          
+          <div class="language-switcher">
+            <div class="lang_switcher_class">
+   <div class="globe_class" onclick="">
+       <ul class="lang_list_class">
+           <li>
+               <a class="lang_switcher_link" data-language="en" lang="en" href="https://www.palo-it.com/en/services/digital-transformation/github-copilot-adoption">English</a>
+           </li>
+           <li>
+               <a class="lang_switcher_link" data-language="es" lang="es" href="https://www.palo-it.com/es/servicios/transformación-digital/adopción-github-copilot">Español</a>
+           </li>
+           <li>
+               <a class="lang_switcher_link" data-language="fr" lang="fr" href="https://www.palo-it.com/fr/services/transformation-digitale/adoption-github-copilot">Français</a>
+           </li>
+           <li>
+               <a class="lang_switcher_link" data-language="th" lang="th" href="https://www.palo-it.com/th/services/digital-transformation/github-copilot-adoption">ไทย</a>
+           </li>
+           <li>
+               <a class="lang_switcher_link" data-language="zh-hk" lang="zh-hk" href="https://www.palo-it.com/zh-hk/services/digital-transformation/github-copilot-adoption">中文 - 香港</a>
+           </li>
+           <li>
+               <a class="lang_switcher_link" data-language="zh-cn" lang="zh-cn" href="https://www.palo-it.com/zh-cn/services/digital-transformation/github-copilot-adoption">简体中文</a>
+           </li>
+       </ul>
+   </div>
+</div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+</div></div></div>
+      
+
+      
+
+      <main id="main-content" class="body-container-wrapper">
+        
+
+  <div class="container-fluid body-container body-container--blogReport">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd_area-row-0-force-full-width-section dnd-section dnd_area-row-0-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd_area-column-1-padding dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-2" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs-blog-report-banner cs-no-banner white" id="banner_form_section">
+  <div class="content-wrapper">
+    <div class="row-inner">
+      <div class="main-column">
+        
+        <div class="banner-content">
+          
+          <h1>Boost your software development speed with GitHub Copilot</h1>
+        </div>
+        
+        
+      </div>
+      <div class="form-column white-form">
+        <div class="col-inner">
+          <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_form_330276305_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_form_330276305"></div>
+
+
+
+
+
+
+
+
+
+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-form-group white-form">
+  <div class="col-inner">
+    <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_form_932056425_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_form_932056425"></div>
+
+
+
+
+
+
+
+
+
+</span>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_dnd_area-module-2 .hs-blog-report-banner {
+  padding-top:158px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  margin-bottom:200px;
+  background-image:url(https://www.palo-it.com/hubfs/chub_backup/AI-driven%20API%20services.png);
+  background-size:cover;
+  background-position:center bottom;
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .hs-blog-report-banner.white .overline-text,
+#hs_cos_wrapper_dnd_area-module-2 .hs-blog-report-banner.white .banner-content * { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_dnd_area-module-2 .hs-blog-report-banner {
+    padding-top:122px;
+    padding-right:0px;
+    padding-bottom:66.5px;
+    padding-left:0px;
+    margin-bottom:0px;
+  }
+}
+
+@media (max-width:479px) {
+  #hs_cos_wrapper_dnd_area-module-2 .hs-blog-report-banner {
+    background-image:url(https://www.palo-it.com/hubfs/chub_backup/AI-driven%20API%20services%20mobile.png);
+    background-size:cover;
+    background-position:center bottom;
+  }
+}
+
+</style>
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd_area-row-1-padding dnd-section dnd_area-row-1-margin dnd_area-row-1-force-full-width-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd_area-column-3-padding dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-4" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_contentWithImage default" id="">
+  <div class="content-wrapper style1">
+    <div class="inner_row">
+      <div class="left_content_column">
+        
+          <div class="section-header">
+            <div class="title-heading primary-color">
+              <h2>
+                Our Approach
+              </h2>
+            </div>
+          </div>
+             
+        <div class="left_content secondary-color">
+          <p>GitHub Copilot accelerates code creation, slashes development time, improves quality and security and boosts collaboration.&nbsp;</p>
+<p>Based on our experience using and deploying GitHub Copilot for the past 12 months both internally and with clients, PALO IT has developed a catalyst framework to maximize the ROI of the platform.<br><br>Whether it's for a pilot project (that we help you identify) or for full-scale deployment, our framework guarantees the best possible outcome, and as a <strong>GitHub Partner of the Year</strong>, we’re here to help you unlock the full potential of AI in your development process.</p>
+        </div>
+        
+      </div>
+      
+        <div class="right_imnage_column">
+          <div class="right_imnage_column_inner">
+            
+            
+            
+            
+            
+            <img src="https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=347&amp;height=347&amp;name=Security_POTY_Badge_White@2x.png" alt="Security_POTY_Badge_White@2x" loading="lazy" width="347" height="347" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=174&amp;height=174&amp;name=Security_POTY_Badge_White@2x.png 174w, https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=347&amp;height=347&amp;name=Security_POTY_Badge_White@2x.png 347w, https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=521&amp;height=521&amp;name=Security_POTY_Badge_White@2x.png 521w, https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=694&amp;height=694&amp;name=Security_POTY_Badge_White@2x.png 694w, https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=868&amp;height=868&amp;name=Security_POTY_Badge_White@2x.png 868w, https://www.palo-it.com/hs-fs/hubfs/Security_POTY_Badge_White@2x.png?width=1041&amp;height=1041&amp;name=Security_POTY_Badge_White@2x.png 1041w" sizes="(max-width: 347px) 100vw, 347px">
+          </div>
+        </div>
+      
+    </div>
+    
+      <div class="button-row">
+      <div class="col-inner">
+        
+        <span id="hs_cos_wrapper_dnd_area-module-4_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_cta" style="" data-hs-cos-general-type="widget" data-hs-cos-type="cta"></span>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<style>
+  #hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage {
+  padding-top:72px;
+  padding-right:0px;
+  padding-bottom:72px;
+  padding-left:0px;
+  background-color:rgba(255,255,255,1.0);
+}
+
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage.white .title-heading>*,
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage.white .left_content,
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage.white .left_content>*,
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage.white .custom-button,
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage.white .custom-button:hover { color:#fff; }
+
+#hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage .title-heading>* { color:rgba(61,62,59,1.0); }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_dnd_area-module-4 .hs_contentWithImage {
+    padding-top:74px;
+    padding-right:0px;
+    padding-bottom:52px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1743557904657" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_logosSection default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner ">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <h2>
+              Partnering with the best in tech
+            </h2>
+          </div>
+        
+        <div class="bottom_section_group">
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hubfs/PaloIT-Assets/images/GitHub.svg" alt="GitHub" loading="lazy" style="max-width: 100%; height: auto;">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hubfs/chub_backup/Microsoft.svg" alt="Microsoft" loading="lazy" width="98" height="27" style="max-width: 100%; height: auto;">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=143&amp;height=31&amp;name=Claude.png" alt="Claude" loading="" width="143" height="31" srcset="https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=72&amp;height=16&amp;name=Claude.png 72w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=143&amp;height=31&amp;name=Claude.png 143w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=215&amp;height=47&amp;name=Claude.png 215w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=286&amp;height=62&amp;name=Claude.png 286w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=358&amp;height=78&amp;name=Claude.png 358w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Claude.png?width=429&amp;height=93&amp;name=Claude.png 429w" sizes="(max-width: 143px) 100vw, 143px">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=124&amp;height=35&amp;name=OpenAI.png" alt="OpenAI" loading="lazy" width="124" height="35" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=62&amp;height=18&amp;name=OpenAI.png 62w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=124&amp;height=35&amp;name=OpenAI.png 124w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=186&amp;height=53&amp;name=OpenAI.png 186w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=248&amp;height=70&amp;name=OpenAI.png 248w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=310&amp;height=88&amp;name=OpenAI.png 310w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/OpenAI.png?width=372&amp;height=105&amp;name=OpenAI.png 372w" sizes="(max-width: 124px) 100vw, 124px">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hubfs/chub_backup/AWS.svg" alt="AWS" loading="lazy" width="82" height="49" style="max-width: 100%; height: auto;">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=130&amp;height=64&amp;name=Alibaba%20Cloud%20logo.png" alt="Alibaba Cloud logo" loading="lazy" width="130" height="64" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=65&amp;height=32&amp;name=Alibaba%20Cloud%20logo.png 65w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=130&amp;height=64&amp;name=Alibaba%20Cloud%20logo.png 130w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=195&amp;height=96&amp;name=Alibaba%20Cloud%20logo.png 195w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=260&amp;height=128&amp;name=Alibaba%20Cloud%20logo.png 260w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=325&amp;height=160&amp;name=Alibaba%20Cloud%20logo.png 325w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/Alibaba%20Cloud%20logo.png?width=390&amp;height=192&amp;name=Alibaba%20Cloud%20logo.png 390w" sizes="(max-width: 130px) 100vw, 130px">
+                  
+                
+              </div>
+            </div>
+          
+            <div class="bottom_item">
+              <div class="bottom_item_inner">
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  <img src="https://www.palo-it.com/hubfs/chub_backup/Google-Cloud.svg" alt="Google-Cloud" loading="lazy" width="94" height="20" style="max-width: 100%; height: auto;">
+                  
+                
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_widget_1743557904657 .hs_logosSection {
+  padding-top:72px;
+  padding-right:0px;
+  padding-bottom:72px;
+  padding-left:0px;
+  background-color:rgba(246,246,245,1.0);
+}
+
+#hs_cos_wrapper_widget_1743557904657 .hs_logosSection.white .top_heading,
+#hs_cos_wrapper_widget_1743557904657 .hs_logosSection.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_widget_1743557904657 .hs_logosSection {
+    padding-top:40px;
+    padding-right:0px;
+    padding-bottom:40px;
+    padding-left:0px;
+  }
+}
+
+@media (max-width:400px) {
+  #hs_cos_wrapper_widget_1743557904657 .hs_logosSection { background-color:rgba(246,246,245,1.0); }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd_area-row-2-padding dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1743485945016" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_advancedRichText default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <div>
+<div>
+<div data-widget-type="cell" data-x="0" data-w="12">
+<div>
+<div>
+<div data-widget-type="custom_widget" data-x="0" data-w="12">
+<h4><strong><span style="color: #4078c0;">1. Becoming an AI-Enabled Developer</span></strong></h4>
+<p><span><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU">PALO IT offers practical training sessions, including a short learning lunch, to empower teams with this technology. As a development company, we prioritize real-world experience.</span>&nbsp;</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-widget-type="cell" data-x="0" data-w="12">
+<div>
+<div>
+<div data-widget-type="custom_widget" data-x="0" data-w="12">
+<h4><strong><span style="color: #4078c0;">2. AI Superpower for All Teams</span></strong></h4>
+<p><span><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU">With Everything-As-Code, all teams have transformed into developers, including Testing, DevOps, Security, Cloud, and SRE. They leverage the power of GitHub Copilot and Generative AI through dedicated learning sessions.</span>&nbsp;</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-widget-type="cell" data-x="0" data-w="12">
+<div>
+<div>
+<div data-widget-type="custom_widget" data-x="0" data-w="12">
+<h4><strong><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU" style="color: #4078c0;">3. Swimming in the Deep End</span>&nbsp;</strong></h4>
+<p><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU">After completing the initial training, you may wish to delve deeper. We offer additional prompt engineering trainings or personalized coaching sessions for your teams. Let’s arrange a deep dive session to enhance their skills!</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}">&nbsp;</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-widget-type="cell" data-x="0" data-w="12">
+<div>
+<div>
+<div data-widget-type="custom_widget" data-x="0" data-w="12">
+<h4><strong><span style="color: #4078c0;"><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU">4. Proof of Value&nbsp;</span></span></strong></h4>
+<p><span>We’ve created tools to collect data to track productivity before and after using GitHub Copilot. This allows you to assess adoption, quality, speed, and the benefits resulting from the change. With this information, you can quickly evaluate the ROI that GitHub Copilot (and other GitHub services) brings to the table.</span><span></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div data-widget-type="cell" data-x="0" data-w="12">
+<div>
+<div>
+<div data-widget-type="custom_widget" data-x="0" data-w="12">
+<h4><strong><span style="color: #4078c0;"><span data-contrast="none" xml:lang="EN-AU" lang="EN-AU">5. Guidance and Coaching</span>&nbsp;</span></strong></h4>
+<p><span>Following the trainings, we maintain communication with your development teams through their preferred channels: e-mail, Slack, Teams, or any other means. We’re here to address their questions, and ensure continuous adoption, collect feedback, and assist with their new sidekick!<br>We want to make sure that GitHub Copilot stays an integral part of your workflow and helps you get all the tremendous benefits it can offer.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_widget_1743485945016 .hs_advancedRichText {
+  padding-top:80px;
+  padding-right:0px;
+  padding-bottom:80px;
+  padding-left:0px;
+}
+
+#hs_cos_wrapper_widget_1743485945016 .hs_advancedRichText.white .top_heading,
+#hs_cos_wrapper_widget_1743485945016 .hs_advancedRichText.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_widget_1743485945016 .hs_advancedRichText {
+    padding-top:50px;
+    padding-right:0px;
+    padding-bottom:50px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-section dnd_area-row-3-padding dnd_area-row-3-background-layers dnd_area-row-3-background-color">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1743486282732" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_advancedRichText default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <h3 style="text-align: center;">Beyond GitHub Copilot: Advanced Security, Migrations &amp; AI Delivery</h3>
+<div style="text-align: center;">GitHub Copilot is a powerful tool, but it’s not the end of the GitHub value proposition.</div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_widget_1743486282732 .hs_advancedRichText {
+  padding-top:80px;
+  padding-right:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+}
+
+#hs_cos_wrapper_widget_1743486282732 .hs_advancedRichText.white .top_heading,
+#hs_cos_wrapper_widget_1743486282732 .hs_advancedRichText.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_widget_1743486282732 .hs_advancedRichText {
+    padding-top:50px;
+    padding-right:0px;
+    padding-bottom:50px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-row">
+<div class="row-fluid ">
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1743486617875" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_advancedRichText default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <h3><img src="https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=200&amp;height=133&amp;name=advanced%20security%202.png" width="200" height="133" loading="lazy" alt="advanced security 2" style="height: auto; max-width: 100%; width: 200px; margin-left: auto; margin-right: auto; display: block;" srcset="https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=100&amp;height=67&amp;name=advanced%20security%202.png 100w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=200&amp;height=133&amp;name=advanced%20security%202.png 200w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=300&amp;height=200&amp;name=advanced%20security%202.png 300w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=400&amp;height=266&amp;name=advanced%20security%202.png 400w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=500&amp;height=333&amp;name=advanced%20security%202.png 500w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/advanced%20security%202.png?width=600&amp;height=399&amp;name=advanced%20security%202.png 600w" sizes="(max-width: 200px) 100vw, 200px"></h3>
+<h3>GitHub Advanced Security</h3>
+<p>We’ve successfully implemented GitHub Advanced Security with teams. Our view is that if making secure code is easy and straightforward, every developer will want to do it.&nbsp;</p>
+<p>&nbsp;</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_widget_1743486617875 .hs_advancedRichText {
+  padding-top:80px;
+  padding-right:0px;
+  padding-bottom:20px;
+  padding-left:0px;
+}
+
+#hs_cos_wrapper_widget_1743486617875 .hs_advancedRichText.white .top_heading,
+#hs_cos_wrapper_widget_1743486617875 .hs_advancedRichText.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_widget_1743486617875 .hs_advancedRichText {
+    padding-top:50px;
+    padding-right:0px;
+    padding-bottom:50px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="4" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1743487087246" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_advancedRichText default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <h3><img src="https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=200&amp;height=133&amp;name=migration.png" width="200" height="133" loading="lazy" alt="migration" style="height: auto; max-width: 100%; width: 200px; margin-left: auto; margin-right: auto; display: block;" srcset="https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=100&amp;height=67&amp;name=migration.png 100w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=200&amp;height=133&amp;name=migration.png 200w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=300&amp;height=200&amp;name=migration.png 300w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=400&amp;height=266&amp;name=migration.png 400w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=500&amp;height=333&amp;name=migration.png 500w, https://www.palo-it.com/hs-fs/hubfs/chub_backup/migration.png?width=600&amp;height=399&amp;name=migration.png 600w" sizes="(max-width: 200px) 100vw, 200px"></h3>
+<h3>GitHub Migrations&nbsp;</h3>
+<p>Enhance your development process with GitHub Copilot. Our guided adoption journey helps teams leverage AI-powered suggestions, improving productivity and code quality. From initial PoC to in-depth training, we ensure a seamless integration that maximizes the benefits of GitHub Copilot.</p>
+<p>&nbsp;</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_module_1743487087246 .hs_advancedRichText {
+  padding-top:80px;
+  padding-right:0px;
+  padding-bottom:20px;
+  padding-left:0px;
+}
+
+#hs_cos_wrapper_module_1743487087246 .hs_advancedRichText.white .top_heading,
+#hs_cos_wrapper_module_1743487087246 .hs_advancedRichText.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_module_1743487087246 .hs_advancedRichText {
+    padding-top:50px;
+    padding-right:0px;
+    padding-bottom:50px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="8" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1743654774442" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_advancedRichText default" id="">
+  <div class="content-wrapper">
+    <div class="row-inner">      
+      <div class="main-column">
+        
+          <div class="top_heading primary-color">
+            <h3><img src="https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=200&amp;height=148&amp;name=Gen-e2%20logo%201.png" width="200" height="148" loading="lazy" alt="Gen-e2 logo 1" style="height: auto; max-width: 100%; width: 200px; margin-left: auto; margin-right: auto; display: block;" srcset="https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=100&amp;height=74&amp;name=Gen-e2%20logo%201.png 100w, https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=200&amp;height=148&amp;name=Gen-e2%20logo%201.png 200w, https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=300&amp;height=222&amp;name=Gen-e2%20logo%201.png 300w, https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=400&amp;height=296&amp;name=Gen-e2%20logo%201.png 400w, https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=500&amp;height=370&amp;name=Gen-e2%20logo%201.png 500w, https://www.palo-it.com/hs-fs/hubfs/Gen-e2%20logo%201.png?width=600&amp;height=444&amp;name=Gen-e2%20logo%201.png 600w" sizes="(max-width: 200px) 100vw, 200px">Gen-e2</h3>
+<p>Further streamline your development process with our <span style="text-decoration: underline; color: #008f68;"><a href="/en/blog/gen-e2" rel="noopener" style="color: #008f68; text-decoration: underline;">Gen-e2 (Generative AI Enhanced Engineering)</a></span> methodology. Maximize the potential of GitHub Copilot at a team level by generating 95% of code, documentation, architecture diagrams, and IaC – delivering projects 2-5x times faster than conventional approaches, with higher quality.</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #hs_cos_wrapper_module_1743654774442 .hs_advancedRichText {
+  padding-top:80px;
+  padding-right:0px;
+  padding-bottom:20px;
+  padding-left:0px;
+}
+
+#hs_cos_wrapper_module_1743654774442 .hs_advancedRichText.white .top_heading,
+#hs_cos_wrapper_module_1743654774442 .hs_advancedRichText.white .top_heading>* { color:#fff; }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_module_1743654774442 .hs_advancedRichText {
+    padding-top:50px;
+    padding-right:0px;
+    padding-bottom:50px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 dnd-section dnd_area-row-4-force-full-width-section dnd_area-row-4-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd_area-column-7-padding dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1743557362446" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_equalColumnCard white" id="">
+  <div class="content-wrapper">
+    
+      <div class="section-header">
+        <div class="title-heading primary-color">
+          <h2>
+            More insights
+          </h2>
+        </div>
+      </div>
+    
+    <div class="listing-wrapper">
+      
+      <div class="list-card card1">
+        <style>
+          .hs_equalColumnCard .listing-wrapper > .list-card.card1:hover .col-inner::before {
+            background: rgba(64, 120, 192,	1.0);
+          }
+        </style>
+        <div class="col-inner" style="background-image:url('https://www.palo-it.com/hubfs/chub_backup/Github%20Galaxy.jpeg')">
+          <div>
+            <div class="meta">
+              Article
+            </div>
+            <h2 class="post-title title-large">
+              
+              
+              <a href="https://www.palo-it.com/en/blog/migrating-to-github-enterprise-consulting">
+                Migrating to GitHub Enterprise for Enhanced Developer Productivity and Data Protection</a>
+            </h2>
+            <div class="more-link">
+              
+              
+              <a class="custom-button cta-text primary-color" href="https://www.palo-it.com/en/blog/migrating-to-github-enterprise-consulting">
+                Read More
+                <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.4167 9.9262L11.1574 14.9465C10.8585 15.2155 10.4103 15.2155 10.1414 14.9166C9.87241 14.6178 9.87241 14.1696 10.1712 13.9006L14.1457 10.1055H3.9855C3.56714 10.1055 3.26831 9.80667 3.26831 9.38831C3.26831 8.99983 3.56714 8.67112 3.9855 8.67112H14.1457L10.1712 4.90588C9.87241 4.63694 9.87241 4.15881 10.1414 3.88987C10.4103 3.59104 10.8884 3.59104 11.1574 3.85999L16.4167 8.8803C16.5662 9.02971 16.6558 9.20901 16.6558 9.38831C16.6558 9.59749 16.5662 9.77678 16.4167 9.9262Z" fill="white" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="list-card card2">
+        <style>
+          .hs_equalColumnCard .listing-wrapper > .list-card.card2:hover .col-inner::before {
+            background: rgba(64, 120, 192,	1.0);
+          }
+        </style>
+        <div class="col-inner" style="background-image:url('https://www.palo-it.com/hubfs/chub_backup/brecht-corbeel-BvAwzPQRRis-unsplash.jpg')">
+          <div>
+            <div class="meta">
+              Article
+            </div>
+            <h2 class="post-title title-large">
+              
+              
+              <a href="https://www.palo-it.com/en/blog/devops-with-github-advanced-specialisation-on-microsoft-azure-certification">
+                PALO IT Achieves DevOps with GitHub Advanced Specialisation on Microsoft Azure Certification</a>
+            </h2>
+            <div class="more-link">
+              
+              
+              <a class="custom-button cta-text primary-color" href="https://www.palo-it.com/en/blog/devops-with-github-advanced-specialisation-on-microsoft-azure-certification">
+                Read More
+                <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.4167 9.9262L11.1574 14.9465C10.8585 15.2155 10.4103 15.2155 10.1414 14.9166C9.87241 14.6178 9.87241 14.1696 10.1712 13.9006L14.1457 10.1055H3.9855C3.56714 10.1055 3.26831 9.80667 3.26831 9.38831C3.26831 8.99983 3.56714 8.67112 3.9855 8.67112H14.1457L10.1712 4.90588C9.87241 4.63694 9.87241 4.15881 10.1414 3.88987C10.4103 3.59104 10.8884 3.59104 11.1574 3.85999L16.4167 8.8803C16.5662 9.02971 16.6558 9.20901 16.6558 9.38831C16.6558 9.59749 16.5662 9.77678 16.4167 9.9262Z" fill="white" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="list-card card3">
+        <style>
+          .hs_equalColumnCard .listing-wrapper > .list-card.card3:hover .col-inner::before {
+            background: rgba(64, 120, 192,	1.0);
+          }
+        </style>
+        <div class="col-inner" style="background-image:url('https://www.palo-it.com/hubfs/GitHub%20Copilot%20Adoption%20banner%20mobile.png')">
+          <div>
+            <div class="meta">
+              Article
+            </div>
+            <h2 class="post-title title-large">
+              
+              
+              <a href="https://www.palo-it.com/en/blog/github-migration-preparation-embracing-the-era-of-modern-pipeline">
+                GitHub Migration Preparation: Adopting the Era of Modern Pipeline</a>
+            </h2>
+            <div class="more-link">
+              
+              
+              <a class="custom-button cta-text primary-color" href="https://www.palo-it.com/en/blog/github-migration-preparation-embracing-the-era-of-modern-pipeline">
+                Read More
+                <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.4167 9.9262L11.1574 14.9465C10.8585 15.2155 10.4103 15.2155 10.1414 14.9166C9.87241 14.6178 9.87241 14.1696 10.1712 13.9006L14.1457 10.1055H3.9855C3.56714 10.1055 3.26831 9.80667 3.26831 9.38831C3.26831 8.99983 3.56714 8.67112 3.9855 8.67112H14.1457L10.1712 4.90588C9.87241 4.63694 9.87241 4.15881 10.1414 3.88987C10.4103 3.59104 10.8884 3.59104 11.1574 3.85999L16.4167 8.8803C16.5662 9.02971 16.6558 9.20901 16.6558 9.38831C16.6558 9.59749 16.5662 9.77678 16.4167 9.9262Z" fill="white" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+    
+    <div class="button-row">
+      <div class="col-inner">
+        
+        
+        
+        <a class="primary-transparent-btn cta-text" href="https://www.palo-it.com/en/blog">
+          <span>See More <svg width="18" height="19" viewbox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.1406 9.47451L9.98438 14.3964C9.69141 14.6601 9.25195 14.6601 8.98828 14.3671C8.72461 14.0741 8.72461 13.6347 9.01758 13.371L12.9141 9.65029H2.95312C2.54297 9.65029 2.25 9.35732 2.25 8.94717C2.25 8.56631 2.54297 8.24404 2.95312 8.24404H12.9141L9.01758 4.55263C8.72461 4.28896 8.72461 3.82021 8.98828 3.55654C9.25195 3.26357 9.7207 3.26357 9.98438 3.52724L15.1406 8.44912C15.2871 8.5956 15.375 8.77138 15.375 8.94717C15.375 9.15224 15.2871 9.32803 15.1406 9.47451Z" fill="#008F68" />
+            </svg>
+          </span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  #hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard {
+  padding-top:89.5px;
+  padding-right:0px;
+  padding-bottom:89.5px;
+  padding-left:0px;
+  background-color:rgba(255,255,255,1.0);
+}
+
+#hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard.white .meta,
+#hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard.white .post-title,
+#hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard.white .custom-button,
+#hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard.white .custom-button:hover { color:#fff; }
+
+#hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard .title-heading>* { color:rgba(61,62,59,1.0); }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_widget_1743557362446 .hs_equalColumnCard {
+    padding-top:41px;
+    padding-right:0px;
+    padding-bottom:41px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 dnd-section dnd_area-row-5-margin dnd_area-row-5-padding dnd_area-row-5-force-full-width-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd_area-column-9-padding dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-10" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="hs_contentWithImage default" id="">
+  <div class="content-wrapper style2">
+    <div class="inner_row">
+      <div class="left_content_column">
+        
+          <div class="section-header">
+            <div class="title-heading primary-color">
+              <h2>
+                About PALO IT
+              </h2>
+            </div>
+          </div>
+             
+        <div class="left_content secondary-color">
+          <p>PALO IT is a global technology consultancy that designs, develops and scales digital and sustainable products and services to unlock value across the triple bottom line: people, planet, profit.</p>
+              <p>We do the right thing, and we do it right. We're proud to be a World Economic Forum New Champion, and a B Corp-certified company.</p>
+        </div>
+        
+        <div class="button-row">
+          <div class="col-inner">
+            
+            
+            
+            <a class="secondary-btn cta-text" href="https://www.palo-it.com/en/services">
+              <span>See What We Do <svg width="18" height="19" viewbox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.1406 9.47451L9.98438 14.3964C9.69141 14.6601 9.25195 14.6601 8.98828 14.3671C8.72461 14.0741 8.72461 13.6347 9.01758 13.371L12.9141 9.65029H2.95312C2.54297 9.65029 2.25 9.35732 2.25 8.94717C2.25 8.56631 2.54297 8.24404 2.95312 8.24404H12.9141L9.01758 4.55263C8.72461 4.28896 8.72461 3.82021 8.98828 3.55654C9.25195 3.26357 9.7207 3.26357 9.98438 3.52724L15.1406 8.44912C15.2871 8.5956 15.375 8.77138 15.375 8.94717C15.375 9.15224 15.2871 9.32803 15.1406 9.47451Z" fill="#008F68" />
+                </svg>
+              </span>
+            </a>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+        <div class="right_imnage_column">
+          <div class="right_imnage_column_inner">
+            
+            
+            
+            
+            
+            <img src="https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=960&amp;height=640&amp;name=PALO%20IT%20about%20us.jpg" alt="PALO IT about us" loading="lazy" width="960" height="640" style="max-width: 100%; height: auto;" srcset="https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=480&amp;height=320&amp;name=PALO%20IT%20about%20us.jpg 480w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=960&amp;height=640&amp;name=PALO%20IT%20about%20us.jpg 960w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=1440&amp;height=960&amp;name=PALO%20IT%20about%20us.jpg 1440w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=1920&amp;height=1280&amp;name=PALO%20IT%20about%20us.jpg 1920w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=2400&amp;height=1600&amp;name=PALO%20IT%20about%20us.jpg 2400w, https://www.palo-it.com/hs-fs/hubfs/PALO%20IT%20about%20us.jpg?width=2880&amp;height=1920&amp;name=PALO%20IT%20about%20us.jpg 2880w" sizes="(max-width: 960px) 100vw, 960px">
+          </div>
+        </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+
+<style>
+  #hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage {
+  padding-top:72px;
+  padding-right:0px;
+  padding-bottom:72px;
+  padding-left:0px;
+  background-color:rgba(246,246,245,1.0);
+}
+
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage.white .title-heading>*,
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage.white .left_content,
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage.white .left_content>*,
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage.white .custom-button,
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage.white .custom-button:hover { color:#fff; }
+
+#hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage .title-heading>* { color:rgba(61,62,59,1.0); }
+
+@media (max-width:767px) {
+  #hs_cos_wrapper_dnd_area-module-10 .hs_contentWithImage {
+    padding-top:74px;
+    padding-right:0px;
+    padding-bottom:52px;
+    padding-left:0px;
+  }
+}
+
+</style></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+
+      </main>
+
+      
+        <div data-global-resource-path="PaloIt-2024Theme-CTA9/templates/partials/footer.html"><div id="hs_cos_wrapper_module_footer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><footer class="footer">
+  <div class="content-wrapper">
+    <div class="top-pane">
+      <div class="f_logo">
+        
+        
+        <a href="https://www.palo-it.com/en/">
+          
+          
+          
+          
+          
+          
+          <img src="https://www.palo-it.com/hubfs/PaloIT-Assets/images/PALO%20Logo_footer.svg" alt="PALO Logo_footer" loading="lazy" width="137" height="33" style="max-width: 100%; height: auto;">
+          
+        </a>
+        <div class="caption">
+          <p><strong>We Share</strong> it’s in our DNA.</p>
+        </div>
+      </div>
+      <div class="f-menu-wrapper hidden-phone">
+        <div id="hs_menu_wrapper_module_footer_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/about-us" role="menuitem" target="_self">Who we are</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/services" role="menuitem" target="_self">What we do</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work" role="menuitem" target="_self">Who we work with</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/career" role="menuitem" target="_self">Join us</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/events" role="menuitem" target="_self">Events &amp; news</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/privacy-policy" role="menuitem" target="_self">Legal mentions</a></li>
+ </ul>
+</div>
+      </div>
+    </div>
+    <div class="location-tabber">
+
+      <ul class="tab-titles featured-icons">
+        
+        <li class="tab1 active">
+          APAC
+        </li>
+        
+        <li class="tab2 ">
+          Americas
+        </li>
+        
+        <li class="tab3 ">
+          Europe
+        </li>
+        
+      </ul>
+
+      <div class="tabber-content" id="feature-loader">
+        
+        <div class="location-details feature-detail tab1">
+          <div class="location-items">
+            
+            <div class="location-item">
+              <h4>Sydney, Australia (Brisbane, Melbourne)</h4>
+<p><span>Greenhouse Climate Tech Hub Level 2, Salesforce Tower, 180 Georges St.<br>Sydney, NSW 2000 Australia<br></span><span>australia@palo-it.com<br><span style="color: #ffffff;">+61 447 350 560</span></span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Hong Kong</h4>
+<p><span>The Great Room, 23/F One Taikoo Place, 979 King's Rd., Quarry Bay, Hong Kong<br>+852 8417 8116<br></span><span>hongkong@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Singapore</h4>
+<p><span>11 Beach Road #06-01<br>Singapore 189675<br>+65 6250 4620<br></span><span>singapore@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Bangkok, Thailand</h4>
+<p><span>Room 2301 23/F, 159/37 Serm-Mit Tower, Sukhumvit 21 Rd., Khlong Toei Nuea Sub-District, Wattana District, Bangkok, Thailand 10110<br>+66 (0) 2 180 6121<br></span><span>thailand@palo-it.com</span></p>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="location-details feature-detail tab2">
+          <div class="location-items">
+            
+            <div class="location-item">
+              <h4>São Paulo, Brazil</h4>
+<p><span>Rua Barão de Jundiaí, 523, cxpst 0199, Alto da Lapa, São Paulo/SP, Brazil, CEP 05073-010<br></span><span>brazil@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Bogotá, Colombia</h4>
+<p><span>Carrera 11B #99-25 Of. 7-113<br>Bogotá, Colombia<br>+57 302 2338177<br></span>colombia@palo-it.com</p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Medellín, Colombia</h4>
+<p><span>Medellín Calle 7 Sur #12-145 Of. 13-123<br>Medellín, Colombia<br>+57 302 2338177<br></span><span>colombia@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Mexico City, Mexico</h4>
+<p><span>Campos Elíseos 385, Polanco<br>Mexico City CMX 11560, Mexico<br>+52 55 8494 4244<br></span><span>mexico@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>New York City, USA</h4>
+<p><span>30 Wall Street, 8th Floor<br>New York, NY 10005-2205<br>+1 (646) 859 2021<br></span><span>usa@palo-it.com</span></p>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="location-details feature-detail tab3">
+          <div class="location-items">
+            
+            <div class="location-item">
+              <h4>Paris, France</h4>
+<p><span>6 rue de l'Amiral Coligny<br>75001 Paris<br>+33 (0)6 62 43 83 81<br></span><span>france@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Toulouse, France</h4>
+<p><span>32 rue Pierre-Paul Riquet<br>31000 Toulouse<br>+33 (0)6 62 43 83 81<br></span><span>france@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Nantes, France</h4>
+<p><span>1 rue Saint Julien<br>44000 Nantes<br>+33 (0)6 62 43 83 81<br></span><span>france@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Bordeaux, France</h4>
+<p><span>35 rue Thiac<br>33000 Bordeaux<br>+33 (0)6 62 43 83 81<br></span><span>france@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Lyon, France</h4>
+<p><span>Wyd - 4 place Amédée Bonnet<br>69002 Lyon<br>+33 (0)6 62 43 83 81<br></span><span>france@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Barcelona, Spain</h4>
+<p><span>Rambla de Catalunya, 121, 08008 Barcelona<br></span><span>spain@palo-it.com</span></p>
+            </div>
+            
+            <div class="location-item">
+              <h4>Madrid, Spain</h4>
+<p><span>Paseo de la Habana, 11, 28036 Madrid<br></span><span>spain@palo-it.com</span></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="mobile-seperator">
+      <svg width="95" height="6" viewbox="0 0 95 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.4" d="M3 2.96924H92" stroke="white" stroke-width="5" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="f-menu-wrapper visible-phone">
+      <div id="hs_menu_wrapper_module_footer_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/about-us" role="menuitem" target="_self">Who we are</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/services" role="menuitem" target="_self">What we do</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/work" role="menuitem" target="_self">Who we work with</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/career" role="menuitem" target="_self">Join us</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/events" role="menuitem" target="_self">Events &amp; news</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.palo-it.com/en/privacy-policy" role="menuitem" target="_self">Legal mentions</a></li>
+ </ul>
+</div>
+    </div>
+    <div class="copyright">
+      <div class="copyright-text">
+        © PALO IT Group 2025
+      </div>
+      <div class="social-link">
+        <ul>
+          
+          <li>
+            
+            
+            <a class="social" aria-label="Linkedin" href="https://www.linkedin.com/company/palo-it/" target="_blank" rel="noopener">
+              <svg width="24" height="25" viewbox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">                <path d="M19.5 3.58301C20.1641 3.58301 20.75 4.16895 20.75 4.87207V19.833C20.75 20.5361 20.1641 21.083 19.5 21.083H4.46094C3.79688 21.083 3.25 20.5361 3.25 19.833V4.87207C3.25 4.16895 3.79688 3.58301 4.46094 3.58301H19.5ZM8.52344 18.583V10.2627H5.94531V18.583H8.52344ZM7.23438 9.09082C8.05469 9.09082 8.71875 8.42676 8.71875 7.60645C8.71875 6.78613 8.05469 6.08301 7.23438 6.08301C6.375 6.08301 5.71094 6.78613 5.71094 7.60645C5.71094 8.42676 6.375 9.09082 7.23438 9.09082ZM18.25 18.583V14.0127C18.25 11.7861 17.7422 10.0283 15.125 10.0283C13.875 10.0283 13.0156 10.7314 12.6641 11.3955H12.625V10.2627H10.1641V18.583H12.7422V14.4814C12.7422 13.3877 12.9375 12.333 14.3047 12.333C15.6328 12.333 15.6328 13.583 15.6328 14.5205V18.583H18.25Z" fill="white" />              </svg>
+            </a> 
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer></div></div>
+      
+    </div>
+     
+    
+    
+    <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+<!-- HubSpot performance collection script -->
+<script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+<script src="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/183261685374/1744371163632/template_slick.min.js"></script>
+<script src="https://www.palo-it.com/hs-fs/hubfs/hub_generated/template_assets/1/182599677348/1744371162659/template_main.min.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script>
+<script src="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/182600187530/1744447064578/module_header.min.js"></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js"></script>
+
+    <script data-hs-allowed="true">
+        var options = {
+            portalId: '7666765',
+            formId: '2cea8cd1-010c-4c04-950b-a72b29642fea',
+            formInstanceId: '796',
+            
+            pageId: '188188463913',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "GitHub Copilot Implementation & Adoption | PALO IT Services",
+            
+            
+            
+            inlineMessage: "Thanks for submitting the form.",
+            
+            
+            rawInlineMessage: "Thanks for submitting the form.",
+            
+            
+            hsFormKey: "285e4dd13038a301d5f33e271179e6af",
+            
+            
+            css: '',
+            target: '#hs_form_target_form_330276305',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "landing-page",
+            
+            
+            
+            formsBaseUrl: '/_hcms/forms/',
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+    <script data-hs-allowed="true">
+        var options = {
+            portalId: '7666765',
+            formId: '2cea8cd1-010c-4c04-950b-a72b29642fea',
+            formInstanceId: '9560',
+            
+            pageId: '188188463913',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "GitHub Copilot Implementation & Adoption | PALO IT Services",
+            
+            
+            
+            inlineMessage: "Thanks for submitting the form.",
+            
+            
+            rawInlineMessage: "Thanks for submitting the form.",
+            
+            
+            hsFormKey: "2ba555ac46ddcb136cbdafe233de39f6",
+            
+            
+            css: '',
+            target: '#hs_form_target_form_932056425',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "landing-page",
+            
+            
+            
+            formsBaseUrl: '/_hcms/forms/',
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<script>
+  $(document).ready(function () {
+    const offset = 74; // Adjust for headers or desired spacing
+
+    $('.banner-btn').on('click', function (e) {
+      e.preventDefault(); // Prevent default action (useful for links)
+
+      // Get the target section
+      const target = $('#locate-offices');
+      if (target.length) {
+        // Calculate the target position with offset
+        const targetPosition = target.offset().top - offset;
+
+        // Smooth scroll using jQuery animate
+        $('html, body').animate(
+          {
+            scrollTop: targetPosition,
+          },
+          800 // Duration in milliseconds
+        );
+      }
+    });
+  });
+</script>
+
+<script src="https://www.palo-it.com/hs-fs/hubfs/hub_generated/module_assets/1/182613678954/1740943567548/module_footer.min.js"></script>
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "landing-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.palo-it.com\/en\/services\/digital-transformation\/github-copilot-adoption"]);
+_hsq.push(["setPageId", "188188463913"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 188188463913,
+    "legacyPageId": "188188463913",
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": 188188463913,
+    "languageCode": "en",
+    
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/7666765.js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    render_id: "d6635fe3-1838-41b4-8893-30eb2b5f7c2c",
+    ticks: 1747721325314,
+    page_id: 188188463913,
+    
+    content_group_id: 0,
+    portal_id: 7666765,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "landing-page",
+    scp_content_type: "",
+    
+    analytics_page_id: "188188463913",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.432/js/index.js"></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FKLBSP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  
+</body></html>
