@@ -5,11 +5,11 @@ from pathlib import Path
 from typing import List
 
 # Define paths
-MARKDOWN_DIR = Path("palo-web-md")
-OUTPUT_DIR = Path("qa_dataset")
+# MARKDOWN_DIR = Path("palo-web-md")
+# OUTPUT_DIR = Path("qa_dataset")
 
 
-def get_markdown_files(limit: int = None) -> List[Path]:
+def get_markdown_files(source_dir: Path, limit: int = None) -> List[Path]:
     """Get markdown files from the palo-web-md directory.
 
     Args:
@@ -18,10 +18,10 @@ def get_markdown_files(limit: int = None) -> List[Path]:
     Returns:
         List of Path objects for markdown files.
     """
-    if not MARKDOWN_DIR.exists():
-        raise FileNotFoundError(f"Directory not found: {MARKDOWN_DIR}")
+    if not source_dir.exists():
+        raise FileNotFoundError(f"Directory not found: {source_dir}")
 
-    md_files = [f for f in MARKDOWN_DIR.iterdir() if f.is_file()
+    md_files = [f for f in source_dir.iterdir() if f.is_file()
                 and f.suffix == '.md']
 
     # Sort files by name for consistent order

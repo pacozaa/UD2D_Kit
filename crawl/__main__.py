@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Main entry point for the generate_qa module."""
+"""
+Entry point for executing the crawl module directly.
+"""
 
 from .main import main
 

@@ -32,13 +32,24 @@ dependencies = [
 
     # For HTML to Markdown conversion
     "markitdown==0.0.1",
+
+    # For web crawling
+    "crawl4ai==0.6.3",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0.0", "black>=23.0.0", "isort>=5.12.0", "mypy>=1.0.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+test = ["pytest>=7.0.0", "pytest-cov>=4.1.0", "pytest-mock>=3.10.0"]
 
 [tool.setuptools]
-packages = ["generate_qa", "download_and_convert"]
+packages = ["generate_qa", "crawl", "run_all"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -61,5 +72,6 @@ disallow_untyped_defs = true
 disallow_incomplete_defs = true
 
 [project.scripts]
-download_and_convert = "download_and_convert.main:main"
 generate_qa = "generate_qa.main:main"
+crawl = "crawl.main:main"
+run_all = "run_all.main:main"

@@ -80,3 +80,6 @@ Thumbs.db
 *.gz
 *.zip
 !palo-web-md.zip
+
+crawl_output
+crawl_html

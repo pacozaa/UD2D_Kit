@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Entry point for executing the download_and_convert module directly.
+Entry point for executing the run_all module directly.
 """
 
 from .main import main

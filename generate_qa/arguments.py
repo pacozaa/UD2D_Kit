@@ -14,6 +14,12 @@ def parse_arguments() -> argparse.Namespace:
         description="Generate Q&A pairs from markdown files")
     parser.add_argument("--all", action="store_true",
                         help="Process all markdown files")
+    parser.add_argument("--input", type=str, default="crawl_output",
+                        help="Directory containing markdown files (default: crawl_output)")
+    parser.add_argument("--output", type=str, default="qa_dataset",
+                        help="Directory to save generated Q&A pairs (default: qa_dataset)")
+    parser.add_argument("--num-pairs", type=int, default=5,
+                        help="Number of Q&A pairs to generate per file (default: 5)")
     parser.add_argument("n", nargs="?", default="5",
                         help="Number of files to process (default: 5)")
 
