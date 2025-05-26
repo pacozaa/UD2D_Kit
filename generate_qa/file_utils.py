@@ -2,17 +2,16 @@
 """File utilities for Q&A generation."""
 
 from pathlib import Path
-from typing import List
+from typing import List, Callable
 
-# Define paths
-# MARKDOWN_DIR = Path("palo-web-md")
-# OUTPUT_DIR = Path("qa_dataset")
+from .arguments import FileType
 
 
 def get_markdown_files(source_dir: Path, limit: int = None) -> List[Path]:
-    """Get markdown files from the palo-web-md directory.
+    """Get markdown files from the source directory.
 
     Args:
+        source_dir: Directory containing markdown files.
         limit: Maximum number of files to return. If None, return all files.
 
     Returns:
@@ -22,7 +21,7 @@ def get_markdown_files(source_dir: Path, limit: int = None) -> List[Path]:
         raise FileNotFoundError(f"Directory not found: {source_dir}")
 
     md_files = [f for f in source_dir.iterdir() if f.is_file()
-                and f.suffix == '.md']
+                and f.suffix.lower() == '.md']
 
     # Sort files by name for consistent order
     md_files.sort()
@@ -30,3 +29,20 @@ def get_markdown_files(source_dir: Path, limit: int = None) -> List[Path]:
     if limit and limit > 0:
         return md_files[:limit]
     return md_files
+
+
+def get_file_getter_function(file_type: str) -> Callable[[Path, int], List[Path]]:
+    """Get the appropriate file getter function based on file type.
+
+    Args:
+        file_type: Type of files to get (markdown, pdf)
+
+    Returns:
+        Function to get files of the specified type
+    """
+    if file_type == FileType.PDF:
+        from .pdf_utils import get_pdf_files
+        return get_pdf_files
+
+    # Default to markdown
+    return get_markdown_files

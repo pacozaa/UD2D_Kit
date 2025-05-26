@@ -11,16 +11,17 @@ from typing import Dict, Any
 
 from .arguments import parse_arguments
 from .crawler import DFSCrawler
+from .models import CrawlStats
 
 
-async def run_crawler(args) -> Dict[str, Any]:
+async def run_crawler(args) -> CrawlStats:
     """Run the DFS crawler with provided arguments.
 
     Args:
         args: Command line arguments
 
     Returns:
-        Dict[str, Any]: Statistics from the crawl operation
+        CrawlStats: Statistics from the crawl operation
     """
     # Initialize and run the crawler
     crawler = DFSCrawler(
@@ -64,26 +65,26 @@ def main() -> None:
     # Print summary
     print("\nCrawl Summary:")
     print("-" * 60)
-    print(f"Total pages crawled: {crawl_stats['urls_crawled']}")
-    print(f"Successful crawls: {crawl_stats['successful_crawls']}")
-    print(f"Failed crawls: {crawl_stats['failed_crawls']}")
-    print(f"Total URLs found: {crawl_stats['total_urls_found']}")
+    print(f"Total pages crawled: {crawl_stats.urls_crawled}")
+    print(f"Successful crawls: {crawl_stats.successful_crawls}")
+    print(f"Failed crawls: {crawl_stats.failed_crawls}")
+    print(f"Total URLs found: {crawl_stats.total_urls_found}")
     print(
-        f"URLs skipped (already visited): {crawl_stats['urls_skipped_already_visited']}")
-    print(f"URLs skipped (max depth): {crawl_stats['urls_skipped_max_depth']}")
+        f"URLs skipped (already visited): {crawl_stats.urls_skipped_already_visited}")
+    print(f"URLs skipped (max depth): {crawl_stats.urls_skipped_max_depth}")
     if args.same_domain_only:
         print(
-            f"URLs skipped (different domain): {crawl_stats['urls_skipped_different_domain']}")
-    print(f"URLs skipped (invalid): {crawl_stats['urls_skipped_invalid']}")
-    print(f"Markdown files saved: {crawl_stats['markdown_files_saved']}")
-    print(f"HTML files saved: {crawl_stats['html_files_saved']}")
+            f"URLs skipped (different domain): {crawl_stats.urls_skipped_different_domain}")
+    print(f"URLs skipped (invalid): {crawl_stats.urls_skipped_invalid}")
+    print(f"Markdown files saved: {crawl_stats.markdown_files_saved}")
+    print(f"HTML files saved: {crawl_stats.html_files_saved}")
     print(f"Total time: {end_time - start_time:.2f} seconds")
 
     # Save stats to a JSON file
     stats_file = os.path.join(args.output_md, "crawl_stats.json")
     try:
         with open(stats_file, 'w', encoding='utf-8') as f:
-            json.dump(crawl_stats, f, indent=2)
+            json.dump(crawl_stats.model_dump(), f, indent=2)
         print(f"Saved crawl statistics to {stats_file}")
     except Exception as e:
         print(f"Failed to save statistics: {e}")

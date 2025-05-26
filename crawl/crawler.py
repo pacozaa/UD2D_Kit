@@ -14,6 +14,7 @@ from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, DefaultMarkdownGenerator
 from crawl4ai.content_filter_strategy import PruningContentFilter
 
 from .utils import is_valid_url, is_same_domain, sanitize_filename, save_markdown, save_html
+from .models import CrawlStats
 
 
 class DFSCrawler:
@@ -67,25 +68,14 @@ class DFSCrawler:
         # Extract domain from start_url for same-domain filtering
         self.start_domain = urlparse(start_url).netloc
 
-    async def crawl(self) -> Dict[str, Any]:
+    async def crawl(self) -> CrawlStats:
         """Perform depth-first search crawling.
 
         Returns:
-            Dict: Crawling statistics
+            CrawlStats: Crawling statistics
         """
         start_time = time.time()
-        stats = {
-            "total_urls_found": 0,
-            "urls_crawled": 0,
-            "urls_skipped_already_visited": 0,
-            "urls_skipped_max_depth": 0,
-            "urls_skipped_different_domain": 0,
-            "urls_skipped_invalid": 0,
-            "successful_crawls": 0,
-            "failed_crawls": 0,
-            "markdown_files_saved": 0,
-            "html_files_saved": 0,
-        }
+        stats = CrawlStats()
 
         if self.verbose:
             print(f"Starting DFS crawl from {self.start_url}")
@@ -106,12 +96,12 @@ class DFSCrawler:
 
                 # Skip if URL already visited
                 if current_url in self.visited_urls:
-                    stats["urls_skipped_already_visited"] += 1
+                    stats.urls_skipped_already_visited += 1
                     continue
 
                 # Skip if exceeding max depth
                 if current_depth > self.max_depth:
-                    stats["urls_skipped_max_depth"] += 1
+                    stats.urls_skipped_max_depth += 1
                     continue
 
                 if self.verbose:
@@ -133,7 +123,7 @@ class DFSCrawler:
                     result = await crawler.arun(url=current_url, config=run_config)
 
                     if result.success:
-                        stats["successful_crawls"] += 1
+                        stats.successful_crawls += 1
 
                         # Generate safe filenames
                         safe_filename = sanitize_filename(current_url)
@@ -143,7 +133,7 @@ class DFSCrawler:
                             html_path = save_html(
                                 result.html, self.output_html_dir, safe_filename)
                             if html_path:
-                                stats["html_files_saved"] += 1
+                                stats.html_files_saved += 1
 
                         # Save Markdown content
                         if result.markdown and result.markdown.fit_markdown:
@@ -153,7 +143,7 @@ class DFSCrawler:
                                 safe_filename
                             )
                             if md_path:
-                                stats["markdown_files_saved"] += 1
+                                stats.markdown_files_saved += 1
 
                         # Process links if not at max depth
                         if current_depth < self.max_depth:
@@ -176,7 +166,7 @@ class DFSCrawler:
                                     links.extend(
                                         [link['href'] for link in result.links['external']])
 
-                            stats["total_urls_found"] += len(links)
+                            stats.total_urls_found += len(links)
 
                             # Process and add links to the stack in reverse order
                             # (so the first link is processed first in DFS)
@@ -188,17 +178,17 @@ class DFSCrawler:
 
                                 # Skip invalid URLs
                                 if not is_valid_url(link):
-                                    stats["urls_skipped_invalid"] += 1
+                                    stats.urls_skipped_invalid += 1
                                     continue
 
                                 # Skip URLs not in the same domain if same_domain_only is True
                                 if self.same_domain_only and not is_same_domain(link, self.start_url):
-                                    stats["urls_skipped_different_domain"] += 1
+                                    stats.urls_skipped_different_domain += 1
                                     continue
 
                                 # Skip already visited URLs
                                 if link in self.visited_urls:
-                                    stats["urls_skipped_already_visited"] += 1
+                                    stats.urls_skipped_already_visited += 1
                                     continue
 
                                 # Add to new_links for processing
@@ -208,12 +198,12 @@ class DFSCrawler:
                             for link in reversed(new_links):
                                 self.url_stack.append(link)
                     else:
-                        stats["failed_crawls"] += 1
+                        stats.failed_crawls += 1
                         if self.verbose:
                             print(f"  Failed to crawl: {result.error_message}")
 
                 except Exception as e:
-                    stats["failed_crawls"] += 1
+                    stats.failed_crawls += 1
                     if self.verbose:
                         print(f"  Error crawling {current_url}: {str(e)}")
 
@@ -226,14 +216,14 @@ class DFSCrawler:
 
         # Calculate total time
         total_time = time.time() - start_time
-        stats["total_time_seconds"] = total_time
-        stats["urls_crawled"] = self.crawled_pages
+        stats.total_time_seconds = total_time
+        stats.urls_crawled = self.crawled_pages
 
         if self.verbose:
             print("\nCrawl completed!")
             print(f"Total time: {total_time:.2f} seconds")
             print(f"URLs crawled: {self.crawled_pages}")
-            print(f"Markdown files saved: {stats['markdown_files_saved']}")
-            print(f"HTML files saved: {stats['html_files_saved']}")
+            print(f"Markdown files saved: {stats.markdown_files_saved}")
+            print(f"HTML files saved: {stats.html_files_saved}")
 
         return stats

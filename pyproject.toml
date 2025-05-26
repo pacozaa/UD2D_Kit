@@ -35,6 +35,10 @@ dependencies = [
 
     # For web crawling
     "crawl4ai==0.6.3",
+
+    # For PDF processing
+    "PyPDF2==3.0.1",
+    "pycryptodome==3.23.0",
 ]
 
 [project.optional-dependencies]

@@ -7,6 +7,7 @@ from .arguments import parse_arguments
 from generate_qa.main import main as generate_qa_main
 from crawl.crawler import DFSCrawler
 from crawl.main import run_crawler
+from crawl.models import CrawlStats
 import asyncio
 import time
 import os
@@ -20,14 +21,14 @@ import importlib.util
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 
-def run_crawl(args) -> Dict[str, Any]:
+def run_crawl(args) -> CrawlStats:
     """Run the web crawling process with provided arguments.
 
     Args:
         args: Command line arguments for crawling
 
     Returns:
-        Dict[str, Any]: Statistics from the crawl operation
+        CrawlStats: Statistics from the crawl operation
     """
     print("=" * 60)
     print(f"Step 1: Web Crawling - {args.url}")
@@ -48,19 +49,19 @@ def run_crawl(args) -> Dict[str, Any]:
     # Print summary
     print("\nCrawl Summary:")
     print("-" * 60)
-    print(f"Total pages crawled: {crawl_stats['urls_crawled']}")
-    print(f"Successful crawls: {crawl_stats['successful_crawls']}")
-    print(f"Failed crawls: {crawl_stats['failed_crawls']}")
-    print(f"Total URLs found: {crawl_stats['total_urls_found']}")
+    print(f"Total pages crawled: {crawl_stats.urls_crawled}")
+    print(f"Successful crawls: {crawl_stats.successful_crawls}")
+    print(f"Failed crawls: {crawl_stats.failed_crawls}")
+    print(f"Total URLs found: {crawl_stats.total_urls_found}")
     print(
-        f"URLs skipped (already visited): {crawl_stats['urls_skipped_already_visited']}")
-    print(f"URLs skipped (max depth): {crawl_stats['urls_skipped_max_depth']}")
+        f"URLs skipped (already visited): {crawl_stats.urls_skipped_already_visited}")
+    print(f"URLs skipped (max depth): {crawl_stats.urls_skipped_max_depth}")
     if args.same_domain_only:
         print(
-            f"URLs skipped (different domain): {crawl_stats['urls_skipped_different_domain']}")
-    print(f"URLs skipped (invalid): {crawl_stats['urls_skipped_invalid']}")
-    print(f"Markdown files saved: {crawl_stats['markdown_files_saved']}")
-    print(f"HTML files saved: {crawl_stats['html_files_saved']}")
+            f"URLs skipped (different domain): {crawl_stats.urls_skipped_different_domain}")
+    print(f"URLs skipped (invalid): {crawl_stats.urls_skipped_invalid}")
+    print(f"Markdown files saved: {crawl_stats.markdown_files_saved}")
+    print(f"HTML files saved: {crawl_stats.html_files_saved}")
     print(f"Total time: {end_time - start_time:.2f} seconds")
 
     print("-" * 60)
@@ -140,7 +141,7 @@ def main() -> None:
     print("\n\n")
     print("=" * 60)
     print("Process Complete!")
-    print(f"Crawled {crawl_stats['successful_crawls']} pages from {args.url}")
+    print(f"Crawled {crawl_stats.successful_crawls} pages from {args.url}")
     print(f"Generated Q&A pairs saved to: {os.path.abspath(args.qa_output)}")
     print("=" * 60)
 

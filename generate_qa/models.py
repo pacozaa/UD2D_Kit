@@ -8,9 +8,11 @@ from pydantic import BaseModel, Field
 class QAPair(BaseModel):
     """A single question-answer pair."""
     question: str = Field(
-        description="The question generated from the markdown content")
+        description="The question generated from the content")
     answer: str = Field(description="The answer to the question")
-    source: Optional[str] = Field(None, description="Source markdown file")
+    source: Optional[str] = Field(None, description="Source file")
+    page: Optional[int] = Field(
+        None, description="Page number for PDF files (0-indexed)")
 
 
 class QAPairResponse(BaseModel):

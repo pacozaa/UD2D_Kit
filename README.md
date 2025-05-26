@@ -80,9 +80,9 @@ PALO web documentation:
 crawl "https://www.palo-it.com/en/" --max-depth=2 --max-pages=5 --output-md="palo_md" --output-html="palo_html" --verbose
 ```
 
-### Generate Q&A Pairs from Markdown Files
+### Generate Q&A Pairs from Markdown or PDF Files
 
-The generate_qa module uses OpenAI's API to create question-answer pairs from markdown files. It processes markdown files (by default from the `palo-web-md` directory) and generates a JSONL file containing Q&A pairs.
+The generate_qa module uses OpenAI's API to create question-answer pairs from markdown or PDF files. It processes files (by default from the `crawl_output` directory) and generates a JSONL file containing Q&A pairs.
 
 #### Basic Usage
 
@@ -90,17 +90,18 @@ The generate_qa module uses OpenAI's API to create question-answer pairs from ma
 python -m generate_qa
 ```
 
-This will process the default number of files (5) from the markdown directory.
+This will process the default number of files (5) from the input directory.
 
 #### Command Line Arguments
 
-| Argument    | Description                                          | Default      |
-| ----------- | ---------------------------------------------------- | ------------ |
-| n=N         | Number of files to process                           | 5            |
-| --all       | Process all markdown files instead of limited number | False        |
-| --input     | Directory containing markdown files                  | crawl_output |
-| --output    | Directory to save generated Q&A pairs                | qa_dataset   |
-| --num-pairs | Number of Q&A pairs to generate per file             | 20           |
+| Argument    | Description                                 | Default      |
+| ----------- | ------------------------------------------- | ------------ |
+| n=N         | Number of files to process                  | 5            |
+| --all       | Process all files instead of limited number | False        |
+| --input     | Directory containing input files            | crawl_output |
+| --file-type | Type of files to process (markdown or pdf)  | markdown     |
+| --output    | Directory to save generated Q&A pairs       | qa_dataset   |
+| --num-pairs | Number of Q&A pairs to generate per file    | 20           |
 
 #### Output
 
@@ -108,7 +109,8 @@ The script generates a timestamped JSONL file in the `qa_dataset` directory (e.g
 
 - question: The generated question
 - answer: The corresponding answer
-- source: The source markdown file name
+- source: The source file name
+- page: The page number (for PDF files only, 0-indexed)
 
 #### Examples
 
@@ -142,10 +144,20 @@ Generate more Q&A pairs per file:
 python -m generate_qa --num-pairs=30
 ```
 
+```bash
+python -m generate_qa --file-type=pdf --num-pairs=1
+```
+
+Process PDF files:
+
+```bash
+python -m generate_qa --file-type=pdf --input="pdf_documents"
+```
+
 Combine multiple options:
 
 ```bash
-python -m generate_qa n=10 --input="wiki_md" --output="wiki_qa" --num-pairs=25
+python -m generate_qa n=10 --input="wiki_md" --output="wiki_qa" --num-pairs=25 --file-type=markdown
 ```
 
 ### Run All Steps
@@ -173,8 +185,9 @@ python -m run_all "https://example.com" --max-depth=3 --max-pages=30 --num-qa-pa
 | --same-domain-only | Crawl only pages from the same domain as the starting URL | True         |
 | --qa-all           | Process all markdown files for QA generation              | False        |
 | --qa-output        | Directory to save generated Q&A pairs                     | qa_dataset   |
-| --num-qa-pairs     | Number of Q&A pairs to generate per file                  | 5            |
+| --num-qa-pairs     | Number of Q&A pairs to generate per file/page             | 5            |
 | --num-files        | Number of files to process for QA generation              | 5            |
+| --file-type        | Type of files to process (markdown or pdf)                | markdown     |
 
 #### Examples
 
@@ -194,4 +207,10 @@ Wikipedia with custom output directories:
 
 ```bash
 python -m run_all "https://www.wikipedia.org" --max-depth=1 --max-pages=5 --output-md="wiki_md" --output-html="wiki_html" --qa-output="wiki_qa"
+```
+
+Process PDF files from a directory:
+
+```bash
+python -m generate_qa --file-type=pdf --input="pdf_documents" --num-pairs=10
 ```
