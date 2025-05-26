@@ -2,6 +2,17 @@
 
 ## Overview
 
+Web To Dataset is a comprehensive Python toolkit designed for enterprise LLM specialists and RAG (Retrieval-Augmented Generation) developers to efficiently build training and evaluation datasets from web content. This project streamlines the process of converting organizational websites into structured question-answer datasets suitable for fine-tuning language models or evaluating RAG systems.
+
+The toolkit provides a modular workflow that:
+
+1. **Crawls websites** with configurable depth and scope parameters
+2. **Converts HTML to Markdown** for easier content processing
+3. **Generates high-quality Q&A pairs** leveraging OpenAI's API
+4. **Outputs structured data** in JSONL format ready for model training or evaluation
+
+With minimal setup and configuration, developers can transform domain-specific web content into valuable datasets for enhancing LLM capabilities with organizational knowledge.
+
 ## Installation
 
 1. Set up Conda environment:
