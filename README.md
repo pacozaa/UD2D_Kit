@@ -101,7 +101,7 @@ This will process the default number of files (5) from the input directory.
 | --input     | Directory containing input files            | crawl_output |
 | --file-type | Type of files to process (markdown or pdf)  | markdown     |
 | --output    | Directory to save generated Q&A pairs       | qa_dataset   |
-| --num-pairs | Number of Q&A pairs to generate per file    | 20           |
+| --num-pairs | Number of Q&A pairs to generate per file    | 5            |
 
 #### Output
 
@@ -185,9 +185,8 @@ python -m run_all "https://example.com" --max-depth=3 --max-pages=30 --num-qa-pa
 | --same-domain-only | Crawl only pages from the same domain as the starting URL | True         |
 | --qa-all           | Process all markdown files for QA generation              | False        |
 | --qa-output        | Directory to save generated Q&A pairs                     | qa_dataset   |
-| --num-qa-pairs     | Number of Q&A pairs to generate per file/page             | 5            |
+| --num-qa-pairs     | Number of Q&A pairs to generate per file                  | 5            |
 | --num-files        | Number of files to process for QA generation              | 5            |
-| --file-type        | Type of files to process (markdown or pdf)                | markdown     |
 
 #### Examples
 
