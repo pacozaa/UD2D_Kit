@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "web_to_dataset"
 version = "0.1.0"
-description = "A Python project that analyzes GitHub Copilot data, including modules for analyzing usage data, generating reports, and visualizing results"
+description = "A comprehensive Python toolkit for enterprise LLM specialists and RAG developers to efficiently build training and evaluation datasets from web content"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
