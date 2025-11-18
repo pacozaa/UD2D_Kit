@@ -1,10 +1,31 @@
-# Web To Dataset
+# Unstructured Data To Dataset
 
 > 🚀 **Transform web content and PDFs into high-quality Q&A datasets for LLM training and RAG evaluation in minutes, not days!**
 
+## Quick Start
+
+Get up and running in 3 simple steps:
+
+```bash
+# 1. Create and activate environment
+conda create -n unstructured-data-to-dataset python=3.10
+conda activate unstructured-data-to-dataset
+
+# 2. Install the package
+pip install -e .
+
+# 3. Set up your OpenAI API key
+echo "OPENAI_API_KEY=your_api_key_here" > .env
+
+# 4. Run end-to-end: crawl a website and generate Q&A pairs
+python -m run_all "https://example.com" --max-depth=2 --max-pages=10 --num-qa-pairs=5
+```
+
+That's it! Your Q&A dataset will be saved in the `qa_dataset` directory as a JSONL file.
+
 ## Overview
 
-Web To Dataset is a comprehensive Python toolkit designed for enterprise LLM specialists and RAG (Retrieval-Augmented Generation) developers to efficiently build training and evaluation datasets from web content and PDF documents. This project streamlines the process of converting organizational websites and documents into structured question-answer datasets suitable for fine-tuning language models or evaluating RAG systems.
+Unstructured Data To Dataset is a comprehensive Python toolkit designed for enterprise LLM specialists and RAG (Retrieval-Augmented Generation) developers to efficiently build training and evaluation datasets from web content and PDF documents. This project streamlines the process of converting organizational websites and documents into structured question-answer datasets suitable for fine-tuning language models or evaluating RAG systems.
 
 The toolkit provides a modular workflow that:
 
@@ -21,8 +42,8 @@ With minimal setup and configuration, developers can transform domain-specific w
 1. Set up Conda environment:
 
 ```bash
-conda create -n web-to-dataset python=3.10
-conda activate web-to-dataset
+conda create -n unstructured-data-to-dataset python=3.10
+conda activate unstructured-data-to-dataset
 ```
 
 2. Install the required packages:

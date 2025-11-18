@@ -128,7 +128,7 @@ def main() -> None:
 
     # Print banner
     print("=" * 60)
-    print("Web To Dataset: Crawling + Q&A Generation")
+    print("Unstructured Data To Dataset: Crawling + Q&A Generation")
     print("=" * 60)
 
     # Step 1: Run crawler
