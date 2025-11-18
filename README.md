@@ -98,10 +98,10 @@ Wikipedia with custom output directories:
 python -m crawl "https://www.wikipedia.org" --max-depth=2 --max-pages=5 --output-md="wiki_md" --output-html="wiki_html"
 ```
 
-PALO web documentation:
+MDN Web Docs (Mozilla Developer Network):
 
 ```bash
-crawl "https://www.palo-it.com/en/" --max-depth=2 --max-pages=5 --output-md="palo_md" --output-html="palo_html" --verbose
+crawl "https://developer.mozilla.org/en-US/docs/Web/JavaScript" --max-depth=2 --max-pages=5 --output-md="mdn_md" --output-html="mdn_html" --verbose
 ```
 
 ### Generate Q&A Pairs from Markdown or PDF Files
@@ -159,7 +159,7 @@ python -m generate_qa --all
 Process files from a custom input directory and save to a custom output directory:
 
 ```bash
-python -m generate_qa --input="palo_md" --output="palo_qa_dataset"
+python -m generate_qa --input="mdn_md" --output="mdn_qa_dataset"
 ```
 
 Generate more Q&A pairs per file:
